@@ -1,0 +1,11 @@
+<h1>Your outfits</h1>
+
+<% @outfits.each do |outfit| %>
+  <%= outfit.name %>
+  <%= outfit.location %>
+  <%= outfit.size %>
+  <%= outfit.price %>
+  <%= outfit.color %>
+  <%= outfit.description %>
+  <%= outfit.category %>
+<% end %>
