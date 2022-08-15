@@ -1,6 +1,8 @@
 <%= render "banner" %>
 <div class="container my-4">
-  <h1>Popular outfits</h1>
-  <div class="cards">
-  </div>
+  <h2>Popular outfits</h2>
+<div class="cards">
+  <% 3.times do %>
+    <%= render 'shared/card_outfit' %>
+  <% end %>
 </div>
