@@ -12,8 +12,8 @@ Outfit.destroy_all
 
  25.times do Outfit.create!(
     name: "#{Faker::Emotion.noun} #{TYPES.sample}",
-    color: Faker::Color.color_name,
-    size: ['s', 'm', 'l', 'xl'],
+    colo r: Faker::Color.color_name,
+    size: ['s', 'm', 'l', 'xl'].sample,
     price: rand(500..40000),
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
     molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
