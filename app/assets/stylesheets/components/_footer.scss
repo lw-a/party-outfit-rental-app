@@ -1,5 +1,9 @@
 .footer {
-  background: #F4F4F4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f4f4f4;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,4 +28,3 @@
 .footer-links a:hover {
   opacity: 1;
 }
-
