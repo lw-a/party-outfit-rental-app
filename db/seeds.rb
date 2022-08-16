@@ -9,10 +9,10 @@
 puts 'Removing the users...'
 User.destroy_all
 puts 'Creating new users...'
-User.create!(email: 'adam@me.com', first_name: 'adam', last_name: '928', password: '123123')
-User.create!(email: 'malene@me.com', first_name: 'malene', last_name: '928', password: '123123')
-User.create!(email: 'andre@me.com', first_name: 'andre', last_name: '928', password: '123123')
-User.create!(email: 'nikki@me.com', first_name: 'nikki', last_name: '928', password: '123123')
+User.create!(email: 'adam@me.com', first_name: 'adam', last_name: '928', password: '123123', avatar: 'https://avatars.githubusercontent.com/u/103736492?v=4')
+User.create!(email: 'malene@me.com', first_name: 'malene', last_name: '928', password: '123123', avatar: 'https://avatars.githubusercontent.com/u/107089457?v=4')
+User.create!(email: 'andre@me.com', first_name: 'andre', last_name: '928', password: '123123', avatar: 'https://avatars.githubusercontent.com/u/102734981?v=4')
+User.create!(email: 'nikki@me.com', first_name: 'nikki', last_name: '928', password: '123123', avatar: 'https://avatars.githubusercontent.com/u/94282878?v=4')
 puts "created #{User.count} users"
 
 
@@ -23,8 +23,12 @@ Outfit.destroy_all
 puts 'Creating new outfits...'
 
 
- 25.times do Outfit.create!(
-    name: "#{Faker::Emotion.noun} #{TYPES.sample}",
+ 25.times do
+  clothing = TYPES.sample
+  url = Faker::LoremFlickr.image(size: "450x300", search_terms: [clothing, 'clothing'])
+
+  Outfit.create!(
+    name: "#{Faker::Emotion.noun} #{clothing}",
     color: Faker::Color.color_name,
     size: ['s', 'm', 'l', 'xl'].sample,
     price: rand(500..40000),
@@ -40,7 +44,8 @@ puts 'Creating new outfits...'
     # rating: rand(1..5),
     category: Faker::Restaurant.type.split.first,
     location: [Faker::Address.longitude, Faker::Address.latitude],
-    user: User.all.sample
+    user: User.all.sample,
+    image_url: url
   )
 end
 
