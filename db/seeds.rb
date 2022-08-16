@@ -5,10 +5,23 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts 'Removing the users...'
+User.destroy_all
+puts 'Creating new users...'
+User.create!(email: 'adam@me.com', first_name: 'adam', last_name: '928', password: '123123')
+User.create!(email: 'malene@me.com', first_name: 'malene', last_name: '928', password: '123123')
+User.create!(email: 'andre@me.com', first_name: 'andre', last_name: '928', password: '123123')
+User.create!(email: 'nikki@me.com', first_name: 'nikki', last_name: '928', password: '123123')
+puts "created #{User.count} users"
+
+
 TYPES = ['socks', 'suit', 'shirt', 'tuxedo', 'dress', 'scarf', 't-shirt', 'skirt', 'onepiece', 'trenchcoat', 'sneakers', 'boots', 'pumps', 'shorts', 'ball gown', 'jacket', 'dungarees', 'cosplay', 'pants', 'trousers', 'socks', 'shoes', 'sandals', 'swimsuit', 'slippers', 'sweater', 'tie', 'rags', 'shoes', 'gloves', 'heels']
 
 puts 'Removing the outfits...'
 Outfit.destroy_all
+puts 'Creating new outfits...'
+
 
  25.times do Outfit.create!(
     name: "#{Faker::Emotion.noun} #{TYPES.sample}",
