@@ -26,7 +26,8 @@ Outfit.destroy_all
     sapiente officiis modi at sunt excepturi expedita sint?',
     # rating: rand(1..5),
     category: Faker::Restaurant.type.split.first,
-    location: Faker::Address.latitude
+    location: [Faker::Address.longitude, Faker::Address.latitude],
+    user: User.all.sample
   )
 end
 
