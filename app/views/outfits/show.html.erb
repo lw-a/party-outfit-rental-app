@@ -1,11 +1,11 @@
 <div class="container">
-  <%= image_tag 'https://images.unsplash.com/photo-1597294718646-54e9a083d45f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=784&q=80', alt: "outfit image" %>
-  <div class="d-flex">
+     <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image' %>
+  <div class="d-flex mt-5 gap-5">
     <div class="outfit-info">
       <h2><%= @outfit.name.capitalize %></h2>
       <p><%= @outfit.description %></p>
     </div>
-    <div>
+    <div class="form-booking">
       <%= render 'booking_form' %>
     </div>
   </div>
