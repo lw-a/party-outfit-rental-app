@@ -25,7 +25,7 @@ puts 'Creating new outfits...'
 
  25.times do
   clothing = TYPES.sample
-  url = Faker::LoremFlickr.image(size: "450x300", search_terms: [clothing, 'clothing'])
+  url = "http://source.unsplash.com/featured/?#{clothing}&#{rand(100)}"
 
   Outfit.create!(
     name: "#{Faker::Emotion.noun} #{clothing}",
@@ -42,7 +42,7 @@ puts 'Creating new outfits...'
     quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
     sapiente officiis modi at sunt excepturi expedita sint?',
     # rating: rand(1..5),
-    category: Faker::Restaurant.type.split.first,
+    category: clothing.capitalize,
     location: [Faker::Address.longitude, Faker::Address.latitude],
     user: User.all.sample,
     image_url: url
