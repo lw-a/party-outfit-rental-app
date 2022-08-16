@@ -2,7 +2,7 @@
 <div class="container my-4">
   <h2>Popular outfits</h2>
 <div class="cards">
-  <% 3.times do %>
+  <% @outfits.each do |outfit| %>
     <%= render 'shared/card_outfit' %>
   <% end %>
 </div>

@@ -1,11 +1,12 @@
 <div class="card-outfit">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <img src=<%= outfit.photo.attached? ? cl_image_tag(outfit.photo.key) : "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"%>>
   <div class="card-outfit-infos">
     <div>
       <h2>Name</h2>
       <p>Description</p>
     </div>
     <h2 class="card-outfit-pricing">¥5000</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-outfit-user avatar-bordered" />
+    <%# <%= cl_image_tag(outfit.user_id), class: "card-outfit-user avatar-bordered" %>
+    <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-outfit-user avatar-bordered" /> %> %>
   </div>
 </div>
