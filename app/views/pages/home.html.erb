@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "banner" %>
+<div class="container my-4">
+  <h2>Popular outfits</h2>
+<div class="cards">
+  <% 3.times do %>
+    <%= render 'shared/card_outfit' %>
+  <% end %>
+</div>
