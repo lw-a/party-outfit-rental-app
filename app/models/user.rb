@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :outfits
 
-  validates :email, presence: true
-  # :first_name, :last_name,
+  # validates :first_name, :last_name, presence: true
 end
