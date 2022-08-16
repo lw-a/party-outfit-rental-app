@@ -2,23 +2,22 @@
   <h1>Outfits</h1>
 </div>
 <div class="grid">
-  <% @outfits.each do |outfit| %>
-    <div class="col-lg-5">
-      <div class="card-outfit">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-outfit-infos">
-          <div>
-            <%= outfit.name %>
-            <%= outfit.location %>
-            <%= outfit.size %>
-            <%= outfit.color %>
-            <%= outfit.description %>
-            <%= outfit.category %>
-          </div>
-          <h2> ¥<%= outfit.price %> </h2>
-          <img src="<%= outfit.user.avatar %>" class="card-outfit-user avatar-bordered" />
-        </div>
+  <div class="card-outfit">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-outfit-infos">
+      <div>
+        <% @outfits.each do |outfit| %>
+          <%= outfit.name %>
+          <%= outfit.location %>
+          <%= outfit.size %>
+          <%= outfit.price %>
+          <%= outfit.color %>
+          <%= outfit.description %>
+          <%= outfit.category %>
+        <% end %>
       </div>
+      <h2 class="card-outfit-pricing">¥5000</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-outfit-user avatar-bordered" />
     </div>
-  <% end %>
+  </div>
 </div>
