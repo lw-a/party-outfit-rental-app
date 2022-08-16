@@ -2,8 +2,7 @@ class OutfitsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show ]
   
   def index
-    @outfits = Outfit.all
-    authorize @outfit
+    @outfits = policy_scope(Outfit)
   end
 
   def show
