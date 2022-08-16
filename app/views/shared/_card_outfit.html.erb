@@ -2,10 +2,10 @@
   <img src=<%= outfit.photo.attached? ? cl_image_tag(outfit.photo.key) :  '/assets/hero.jpg'%>>
   <div class="card-outfit-infos">
     <div>
-      <h2>Name</h2>
-      <p>Description</p>
+      <h2><%= outfit.name %></h2>
+      <p><%= truncate(outfit.description, length: 45, omission: '... ') %></p>
     </div>
-    <h2 class="card-outfit-pricing">¥5000</h2>
+    <h2 class="card-outfit-pricing">¥<%= outfit.price %></h2>
     <%# <%= cl_image_tag(outfit.user_id), class: "card-outfit-user avatar-bordered" %>
     <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-outfit-user avatar-bordered" /> %>
   </div>
