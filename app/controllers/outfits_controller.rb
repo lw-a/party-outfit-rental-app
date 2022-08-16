@@ -1,5 +1,6 @@
 class OutfitsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_outfit, only: [:show]
 
   def index
     @outfits = Outfit.all
@@ -38,6 +39,10 @@ class OutfitsController < ApplicationController
   end
 
   private
+
+  def set_outfit
+    @outfit = Outfit.find(params[:id])
+  end
 
   def outfit_params
     params.require(:outfit).permit(:name, :color, :size, :price, :description, :category, :location)
