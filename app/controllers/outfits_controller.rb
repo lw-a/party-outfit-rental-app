@@ -1,9 +1,13 @@
 class OutfitsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show ]
+  
   def index
     @outfits = Outfit.all
+    authorize @outfit
   end
 
   def show
+    @outfit = Outfit.find(params[:id])
     authorize @outfit
   end
 
