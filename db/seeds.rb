@@ -23,8 +23,12 @@ Outfit.destroy_all
 puts 'Creating new outfits...'
 
 
- 25.times do Outfit.create!(
-    name: "#{Faker::Emotion.noun} #{TYPES.sample}",
+ 25.times do
+  clothing = TYPES.sample
+  url = Faker::LoremFlickr.image(size: "450x300", search_terms: [clothing, 'clothing'])
+
+  Outfit.create!(
+    name: "#{Faker::Emotion.noun} #{clothing}",
     color: Faker::Color.color_name,
     size: ['s', 'm', 'l', 'xl'].sample,
     price: rand(500..40000),
@@ -40,7 +44,8 @@ puts 'Creating new outfits...'
     # rating: rand(1..5),
     category: Faker::Restaurant.type.split.first,
     location: [Faker::Address.longitude, Faker::Address.latitude],
-    user: User.all.sample
+    user: User.all.sample,
+    image_url: url
   )
 end
 
