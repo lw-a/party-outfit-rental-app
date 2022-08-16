@@ -25,7 +25,7 @@ puts 'Creating new outfits...'
 
  25.times do
   clothing = TYPES.sample
-  url = Faker::LoremFlickr.image(size: "450x300", search_terms: [clothing, 'clothing'])
+  url = "http://source.unsplash.com/featured/?#{clothing}&#{rand(100)}"
 
   Outfit.create!(
     name: "#{Faker::Emotion.noun} #{clothing}",
