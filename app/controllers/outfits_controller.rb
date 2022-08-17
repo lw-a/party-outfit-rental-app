@@ -1,8 +1,16 @@
 class OutfitsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show ]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @outfits = policy_scope(Outfit)
+
+    # The `geocoded` scope filters only outfits with coordinates
+    @markers = @outfits.geocoded.map do |outfit|
+      {
+        lat: outfit.latitude,
+        lng: outfit.longitude
+      }
+    end
   end
 
   def show
@@ -42,6 +50,6 @@ class OutfitsController < ApplicationController
   private
 
   def outfit_params
-    params.require(:outfit).permit(:name, :color, :size, :price, :description, :category, :location)
+    params.require(:outfit).permit(:name, :color, :size, :price, :description, :category, :address)
   end
 end
