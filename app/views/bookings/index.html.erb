@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>My bookings</h2>
+  <div class="cards">
+    <% if @bookings.empty? %>
+      <p>No bookings yet...</p>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <%= render 'card_booking' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

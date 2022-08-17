@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.where(outfit_id: params[:outfit_id])
+    @bookings = policy_scope(Booking)
+    authorize @bookings
   end
 
   def create

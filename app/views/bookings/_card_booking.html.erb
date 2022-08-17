@@ -1,0 +1,13 @@
+<div class="card">
+  <img class="card-img-top" src="<%= booking.outfit.image_url %>" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= booking.outfit.name %></h5>
+    <p class="card-text"><%= booking.outfit.category %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Price per day: ¥<%= booking.outfit.price %></li>
+    <li class="list-group-item">Start date: <%= booking.outfit.start_date %></li>
+    <li class="list-group-item">End date: <%= booking.outfit.start_date %></li>
+    <li class="list-group-item">Status: <%= booking.status %></li>
+  </ul>
+</div>
