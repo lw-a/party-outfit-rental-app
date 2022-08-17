@@ -1,10 +1,12 @@
 .card-outfit {
+  position: relative;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-outfit > img {
+  position: relative;
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -22,7 +24,20 @@
   margin: 0;
 }
 
+.card-outfit .category {
+  font-size: 16px;
+  position: absolute;
+  background-color: white;
+  bottom: 249px;
+}
 
+.card-outfit .size {
+  font-size: 16px;
+  position: absolute;
+  background-color: white;
+  bottom: 249px;
+  left: 400px;
+}
 .card-outfit .card-outfit-infos {
   padding: 16px;
   display: flex;
@@ -78,4 +93,3 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
