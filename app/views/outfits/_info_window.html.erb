@@ -1,3 +1,3 @@
-<h2><%= outfit.name %></h2>
-<%= image_tag outfit.image_url, alt: "outfit image", id: 'show-image', :style => "height: 5%;"%>
+<h3><%= link_to outfit.name, outfit_path(outfit) %></h3>
+<%= image_tag outfit.image_url, alt: "outfit image", id: 'show-image'%>
 <p><%= outfit.address %></p>

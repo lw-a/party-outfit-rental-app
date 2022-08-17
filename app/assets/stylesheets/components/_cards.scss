@@ -73,6 +73,15 @@
   grid-gap: 16px;
 }
 
+.row {
+  display: flex;
+}
+
+#map-index {
+  position: sticky;
+  top: 0px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
