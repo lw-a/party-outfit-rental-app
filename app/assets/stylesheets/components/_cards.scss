@@ -1,3 +1,15 @@
+.card {
+  border-radius: 4px;
+  position: relative;
+
+  #avatar-booking {
+    position: absolute;
+    right: 16px;
+    top: 264px;
+    width: 60px;
+  }
+}
+
 .card-outfit {
   position: relative;
   overflow: hidden;
