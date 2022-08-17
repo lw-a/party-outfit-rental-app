@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @outfits = Outfit.all
+    @outfits = Outfit.joins(:bookings).limit(3)
+
   end
 end
