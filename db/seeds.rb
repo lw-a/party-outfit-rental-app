@@ -30,7 +30,7 @@ Outfit.create!(
   price: 3000,
   description: 'Do you have an important meeting with your boss? Want to dress to impress? Rent this suit to stand out of the crowd and get that raise you deserve!',
   category: 'Bussiness',
-  address: Faker::Address.full_address,
+  address: "2 chome-11-3 meguro, tokyo 1530063",
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80'
 )
@@ -42,7 +42,7 @@ Outfit.create!(
   price: 2000,
   description: 'Fantastic dress for any occasion, but bound to impress any date. Dress up or dress down.',
   category: 'Datenight',
-  address: Faker::Address.full_address,
+  address: "1 chome-27 Higashiyama, meguro, tokyo 1530043",
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80'
 )
@@ -54,7 +54,7 @@ Outfit.create!(
   price: 5000,
   description: 'Afraid of clowns? Not anymore! With this costume you will put a smile on all the faces.',
   category: 'Costume',
-  address: Faker::Address.full_address,
+  address: '2-chōme-47 Nishihara, Shibuya, Tokyo 1510066',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1587331722574-acf78f587c4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
 )
@@ -66,7 +66,7 @@ Outfit.create!(
   price: 4000,
   description: 'With this dress you will be sure to outshine the bride, and create all the drama.',
   category: 'Formal',
-  address: Faker::Address.full_address,
+  address: '1 Chome Hongo, Bunkyou, Tokyo 1130033',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1585241920473-b472eb9ffbae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2VkZGluZyUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1100&q=60'
 )
@@ -78,7 +78,7 @@ Outfit.create!(
   price: 3000,
   description: "Vests are the future!",
   category: 'Club',
-  address: Faker::Address.full_address,
+  address: '2 Chome Toranomon, Minato, Tokyo 1050001',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=898&q=80'
 )
@@ -90,7 +90,7 @@ Outfit.create!(
   price: 8000,
   description: 'BATMAN! When would this not be a great outfit!!!!',
   category: 'Costume',
-  address: Faker::Address.full_address,
+  address: '1 Chome Kamiuma, Setagaya, Tokyo 1540011',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 )
@@ -102,7 +102,7 @@ Outfit.create!(
   price: 4000,
   description: "Power suit for the power woman. Meet all the KPI's with this outfit",
   category: 'Business',
-  address: Faker::Address.full_address,
+  address: '1 Chome Daita, Setagaya, Tokyo 1550033',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1614786269829-d24616faf56d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80'
 )
@@ -114,7 +114,7 @@ Outfit.create!(
   price: 2000,
   description: 'Going for a walk in the park? This is the perfect outfit for you.',
   category: 'Casual',
-  address: Faker::Address.full_address,
+  address: '5 Chome Koenjiminami, Suginami, Tokyo 1660003',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80'
 )
