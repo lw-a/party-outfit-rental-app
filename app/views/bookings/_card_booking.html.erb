@@ -1,0 +1,18 @@
+<div class="card position-relative">
+  <img class="card-img-top" style="height: 300px; object-fit: cover;" src="<%= booking.outfit.image_url %>" alt="Card image cap">
+  <%= image_tag booking.outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "card-outfit-user avatar-bordered mt-2" %>
+  <div class="card-body">
+    <%= link_to outfit_path(booking.outfit), style: 'text-decoration: none; color: black;' do %>
+      <h5 class="card-title"><%= booking.outfit.name.capitalize %></h5>
+    <% end %>
+    <p class="card-text"><%= booking.outfit.category.capitalize %></p>
+    <p class="card-text"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Price per day:</strong> ¥<%= booking.outfit.price %></li>
+    <li class="list-group-item"><strong>Start date:</strong> <%= booking.start_date %></li>
+    <li class="list-group-item"><strong>End date:</strong> <%= booking.end_date %></li>
+    <li class="list-group-item"><strong>Status:</strong> <%= booking.status.capitalize %></li>
+  </ul>
+</div>
+

@@ -1,12 +1,29 @@
 <div class="container">
-  <%= image_tag 'https://images.unsplash.com/photo-1597294718646-54e9a083d45f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=784&q=80', alt: "outfit image" %>
-  <div class="d-flex">
-    <div class="outfit-info">
+  <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image' %>
+  <div class="row my-3 gy-3">
+    <div class="col-12 col-md-8">
       <h2><%= @outfit.name.capitalize %></h2>
       <p><%= @outfit.description %></p>
+      <table class="table w-50">
+        <tbody>
+          <tr>
+            <td><strong>Category</strong></td>
+            <td><%= @outfit.category %></td>
+          </tr>
+          <tr>
+            <td><strong>Size</strong></td>
+            <td><%= @outfit.size.capitalize %></td>
+          </tr>
+          <tr>
+            <td><strong>Price per day</strong></td>
+            <td>¥<%= @outfit.price %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= image_tag @outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "card-outfit-user avatar-bordered" %>
     </div>
-    <div>
-      <%= render 'booking_form' %>
+    <div class="col-12 col-md-4 form-booking">
+      <%= render 'booking_form', outfit: @outfit, booking: @booking %>
     </div>
   </div>
 </div>
