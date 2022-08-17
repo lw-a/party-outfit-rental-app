@@ -44,7 +44,7 @@ Outfit.create!(
   category: 'Datenight',
   address: Faker::Address.full_address,
   user: User.all.sample,
-  image_url: 'https://unsplash.com/photos/5IcEBmSOQq0'
+  image_url: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80'
 )
 
 Outfit.create!(
@@ -56,7 +56,7 @@ Outfit.create!(
   category: 'Costume',
   address: Faker::Address.full_address,
   user: User.all.sample,
-  image_url: 'https://unsplash.com/photos/kiq2TSTeH0o'
+  image_url: 'https://images.unsplash.com/photo-1587331722574-acf78f587c4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
 )
 
 Outfit.create!(
@@ -80,7 +80,7 @@ Outfit.create!(
   category: 'Club',
   address: Faker::Address.full_address,
   user: User.all.sample,
-  image_url: 'https://unsplash.com/photos/ZGa9d1a_4tA'
+  image_url: 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=898&q=80'
 )
 
 Outfit.create!(
@@ -92,7 +92,7 @@ Outfit.create!(
   category: 'Costume',
   address: Faker::Address.full_address,
   user: User.all.sample,
-  image_url: 'https://unsplash.com/photos/meqVd5zwylI'
+  image_url: 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 )
 
 Outfit.create!(
@@ -104,7 +104,7 @@ Outfit.create!(
   category: 'Business',
   address: Faker::Address.full_address,
   user: User.all.sample,
-  image_url: 'https://unsplash.com/photos/A3MleA0jtoE'
+  image_url: 'https://images.unsplash.com/photo-1614786269829-d24616faf56d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80'
 )
 
 Outfit.create!(
