@@ -1,8 +1,15 @@
-
-
 #show-image {
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center center; 
   width: 100%;
   height: 500px;
-  object-fit: cover;
   margin-top: 24px;
+}
+
+#show-image-top {
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
