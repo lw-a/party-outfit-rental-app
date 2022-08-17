@@ -1,26 +1,26 @@
 <div class="container">
-  <div id="show-container">
-    <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image' %>
-    <div id="show-price">
-      <h2>¥<%= @outfit.price %></h2>
-    </div>
-  </div>
-  <div class="row gy-3">
+  <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image' %>
+  <div class="row my-3 gy-3">
     <div class="col-12 col-md-8">
       <h2><%= @outfit.name.capitalize %></h2>
       <p><%= @outfit.description %></p>
-      <table>
+      <table class="table w-50">
         <tbody>
           <tr>
-            <td>Category</td>
+            <td><strong>Category</strong></td>
             <td><%= @outfit.category %></td>
           </tr>
           <tr>
-            <td></td>
-            <td><%= @outfit.size %></td>
+            <td><strong>Size</strong></td>
+            <td><%= @outfit.size.capitalize %></td>
+          </tr>
+          <tr>
+            <td><strong>Price per day</strong></td>
+            <td>¥<%= @outfit.price %></td>
           </tr>
         </tbody>
       </table>
+      <%= image_tag @outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "card-outfit-user avatar-bordered" %>
     </div>
     <div class="col-12 col-md-4 form-booking">
       <%= render 'booking_form', outfit: @outfit, booking: @booking %>

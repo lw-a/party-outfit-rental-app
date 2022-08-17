@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to root_path
+      redirect_to bookings_path
     else
       redirect_to outfit_path(@outfit), status: :unprocessable_entity
     end
