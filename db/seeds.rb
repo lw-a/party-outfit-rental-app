@@ -54,7 +54,7 @@ Outfit.create!(
   price: 5000,
   description: 'Afraid of clowns? Not anymore! With this costume you will put a smile on all the faces.',
   category: 'Costume',
-  address: '2-chōme-47 Nishihara, Shibuya, Tokyo 1510066',
+  address: '4 Chome-2-8, Minato, Tokyo 105-0011',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1587331722574-acf78f587c4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
 )
@@ -66,7 +66,7 @@ Outfit.create!(
   price: 4000,
   description: 'With this dress you will be sure to outshine the bride, and create all the drama.',
   category: 'Formal',
-  address: '1 Chome Hongo, Bunkyou, Tokyo 1130033',
+  address: '1 Chome-1-2, Sumida, Tokyo 131-0045',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1585241920473-b472eb9ffbae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d2VkZGluZyUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1100&q=60'
 )
@@ -114,7 +114,7 @@ Outfit.create!(
   price: 2000,
   description: 'Going for a walk in the park? This is the perfect outfit for you.',
   category: 'Casual',
-  address: '5 Chome Koenjiminami, Suginami, Tokyo 1660003',
+  address: '2 chome-11-3 meguro, tokyo 1530063',
   user: User.all.sample,
   image_url: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80'
 )
