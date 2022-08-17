@@ -8,7 +8,8 @@
 }
 
 #show-image-top {
-  height: 500px;
+  height: 100%;
+  object-fit: cover;
   display: block;
   margin-left: auto;
   margin-right: auto;

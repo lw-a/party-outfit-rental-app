@@ -4,8 +4,12 @@
   </div>
   <div class="row my-3 gy-3">
     <div class="col-12 col-md-8">
-      <h2><%= @outfit.name.capitalize %></h2>
-      <p><%= @outfit.description %></p>
+      <h2 class="mb-3"><%= @outfit.name.capitalize %></h2>
+      <div class="d-flex align-items-center gap-2">
+        <p><%= image_tag @outfit.user.avatar, alt: 'avatar', class: "avatar-bordered" %></p>
+        <p><strong><%= @outfit.user.first_name.capitalize %></strong></p>
+      </div>
+      <p class="mt-2"><%= @outfit.description %></p>
       <table class="table w-50">
         <tbody>
           <tr>
@@ -22,7 +26,6 @@
           </tr>
         </tbody>
       </table>
-      <%= image_tag @outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "card-outfit-user avatar-bordered" %>
     </div>
     <div class="col-12 col-md-4 form-booking">
       <%= render 'booking_form', outfit: @outfit, booking: @booking %>
