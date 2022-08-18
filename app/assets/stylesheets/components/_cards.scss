@@ -81,8 +81,12 @@
 
 .card-outfit .card-outfit-pricing {
   position: absolute;
-  bottom: 2px;
-  right: 4px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.card-outfit-pricing span {
+  color: #727272;
 }
 
 .cards {
