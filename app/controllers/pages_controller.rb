@@ -3,6 +3,5 @@ class PagesController < ApplicationController
 
   def home
     @outfits = Outfit.joins(:bookings).limit(3)
-
   end
 end

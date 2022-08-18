@@ -10,4 +10,11 @@ class Outfit < ApplicationRecord
 
     super || "hero.jpg"
   end
+
+  include PgSearch::Model
+  pg_search_scope :search_,
+  against: [ :name, :size, :color, :description, :category ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end

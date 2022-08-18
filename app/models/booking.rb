@@ -5,12 +5,11 @@ class Booking < ApplicationRecord
   validates :end_date, presence: true, comparison: { greater_than: :start_date }
   validate :not_past_start_date
   validate :not_past_end_date
-  enum status: { pending: 0, approved: 1, rejected: 2, completed: 3 }
+  enum status: { pending: 0, accepted: 1, rejected: 2, completed: 3 }
 
   def not_past_start_date
     if start_date < Date.today
       errors.add(:date, 'please start the booking from tomorrow or later')
-      notice = 'Hello'
     end
   end
 
