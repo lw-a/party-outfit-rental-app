@@ -2,6 +2,7 @@
   <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
     <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
   </div>
+
   <div class="row my-3 gy-3">
     <div class="col-12 col-md-8">
       <h2 class="mb-3"><%= @outfit.name.capitalize %></h2>
@@ -23,6 +24,11 @@
           <tr>
             <td><strong>Price per day</strong></td>
             <td>¥<%= @outfit.price %></td>
+          </tr>
+          <tr>
+            <td rowspan="2"><strong>Shipping</strong></td>
+            <td><i class="fa-solid fa-truck-fast"></i><br>Express Shipping</td>
+            <td><i class="fa-solid fa-handshake-simple"></i><br>Pickup in person</td>
           </tr>
         </tbody>
       </table>
