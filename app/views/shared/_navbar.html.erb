@@ -4,7 +4,7 @@
       <%= image_tag "logo.png" %>
     <% end %>
     <%= form_tag outfits_path, method: :get, class: "d-flex", style: "width: 50%;" do %>
-      <input class="form-control string required" type="text" name="q" id="q" value="<%= params[:q] %>" placeholder="Find an outfit"/>
+      <input class="form-control string required" type="text" name="q" id="q" value="<%= params[:q] %>" placeholder="Search outfits"/>
       <button name="button" type="submit" class="btn btn-flat"><i class="fas fa-search"></i></button>
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
