@@ -6,11 +6,11 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  def index?
+  def create?
     true
   end
 
-  def create?
-    true
+  def update?
+    record.outfit.user == user
   end
 end

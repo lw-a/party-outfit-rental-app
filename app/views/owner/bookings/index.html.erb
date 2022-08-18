@@ -1,0 +1,70 @@
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>My listings</h2>
+    <%= link_to 'New listing', new_outfit_path, class: 'btn btn-primary'%>
+  </div>
+  <br>
+  <div class="cards">
+    <% if @bookings.empty? %>
+      <p>No listings yet...</p>
+    <% else %>
+      <% @outfits.each do |outfit| %>
+        <div class="card">
+          <img class="card-img-top" src="<%= outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
+          <div class="card-body">
+            <h2 class="category"><strong><%= outfit.category %></strong></h2>
+            <h2 class="size"><strong><%= outfit.size.upcase %></strong></h2>
+            <h5 class="card-title"><strong><%= outfit.name %></strong></h5>
+            <p class="card-text"><%= outfit.description %></p>
+            <p class="card-text"><strong>Price per day:</strong> ¥<%= outfit.price %></p>
+          </div>
+          <% if @bookings.where(outfit: outfit).present? %>
+          <h5 style="margin-left: 16px;"><strong>Booking requests:</strong></h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item mx-4">
+                <div class="bookings">
+                  <% @bookings.where(outfit: outfit).each do |booking| %>
+                    <div class="booking">
+                      <div class='booking-left'>
+                        <%= image_tag booking.user.avatar, class: 'avatar' %>
+                        <div class="booking-info">
+                          <div class="booking-info-title">
+                            <%= booking.user.first_name.capitalize %>
+                          </div>
+                          <div class="booking-info-details">
+                            <%= booking.start_date %> - <%= booking.end_date %>
+                          </div>
+                          <div class="booking-info-details">
+                            <%= booking.comment %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="booking-actions">
+                        <% if booking.pending? %>
+                          <%= simple_form_for booking do |f| %>
+                            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                            <%= f.submit 'Accept', class: 'btn btn-info' %>
+                          <% end %>
+                          <%= simple_form_for booking do |f| %>
+                            <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                            <%= f.submit 'Reject', class: 'btn btn-light' %>
+                          <% end %>
+                        <% else %>
+                          <p class='booking-tag'><%= booking.status %></p>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </li>
+            </ul>             
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+          
+            
+
