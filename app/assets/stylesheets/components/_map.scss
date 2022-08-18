@@ -5,6 +5,9 @@
 
 .mapboxgl-popup {
   max-width: 240px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
 }
 
 .mapboxgl-popup-content {
@@ -17,8 +20,12 @@
 .mapboxgl-popup-content a {
   text-decoration: none;
 }
+.mapboxgl-popup-content p {
+  margin-bottom: 0px;
+}
 
 .mapboxgl-popup-content img{
   max-width: 150px;
   max-height: 200px;
+  margin: 0px;
 }
