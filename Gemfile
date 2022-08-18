@@ -4,7 +4,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem "pundit"
 gem 'open-uri'
 gem "geocoder"
-
+gem "pg_search"
 
 ruby "3.1.2"
 gem "devise"
