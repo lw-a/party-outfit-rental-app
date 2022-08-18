@@ -10,7 +10,6 @@ class Booking < ApplicationRecord
   def not_past_start_date
     if start_date < Date.today
       errors.add(:date, 'please start the booking from tomorrow or later')
-      notice = 'Hello'
     end
   end
 
