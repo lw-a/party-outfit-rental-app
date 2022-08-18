@@ -16,7 +16,6 @@ class OutfitsController < ApplicationController
         lat: outfit.latitude,
         lng: outfit.longitude,
         info_window: render_to_string(partial: "info_window", locals: { outfit: })
-
       }
     end
   end
@@ -40,7 +39,7 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new(outfit_params)
-    @outfit.user = @user
+    @outfit.user = current_user
     authorize @outfit
     if @outfit.save
       redirect_to outfits_path
@@ -64,6 +63,6 @@ class OutfitsController < ApplicationController
   private
 
   def outfit_params
-    params.require(:outfit).permit(:name, :color, :size, :price, :description, :category, :address)
+    params.require(:outfit).permit(:name, :color, :size, :price, :description, :category, :address, :photo)
   end
 end
