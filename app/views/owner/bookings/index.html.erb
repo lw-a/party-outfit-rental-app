@@ -5,11 +5,12 @@
   </div>
   <br>
   <div class="cards">
-    <% if @bookings.empty? %>
+    <% if @outfits.empty? %>
       <p>No listings yet...</p>
     <% else %>
       <% @outfits.each do |outfit| %>
         <div class="card">
+          <%= image_tag outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "avatar-bordered mt-2" %>
           <img class="card-img-top" src="<%= outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
           <div class="card-body">
             <h2 class="category"><strong><%= outfit.category %></strong></h2>
