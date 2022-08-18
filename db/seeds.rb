@@ -224,7 +224,7 @@ Outfit.create!(
   category: 'casual',
   address: 'Kasumigaseki Country Club, Saitama, Japan',
   user: User.all.sample,
-  image_url: 'https://images.unsplash.com/photo-1536243298747-ea8874136d64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+  image_url: 'https://images.unsplash.com/photo-1625178494269-c91109fcc711?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80'
 )
 
 puts "...created #{Outfit.count} outfits"
