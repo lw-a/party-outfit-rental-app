@@ -5,8 +5,23 @@
   #avatar-booking {
     position: absolute;
     right: 16px;
-    top: 264px;
+    top: 8px;
     width: 60px;
+  }
+
+  #card-booking-price {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+
+  #status {
+    position: absolute;
+    right: 16px;
+    bottom: 8px;
+    padding: 4px 16px;
+    background-color: rgb(209, 209, 209);
+    border-radius: 16px;
   }
 }
 

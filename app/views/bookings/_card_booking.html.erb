@@ -1,17 +1,14 @@
 <div class="card">
-  <%= image_tag booking.outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "avatar-bordered mt-2" %>
-  <img class="card-img-top" style="height: 300px; object-fit: cover;" src="<%= booking.outfit.image_url %>" alt="Card image cap">
-  <div class="card-body">
-    <%= link_to outfit_path(booking.outfit), style: 'text-decoration: none; color: black;' do %>
-      <h5 class="card-title"><%= booking.outfit.name.capitalize %></h5>
-    <% end %>
-    <p class="card-text"><%= booking.outfit.category.capitalize %></p>
-    <p class="card-text"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
+  <div class="d-flex">
+    <img style="width: 100px; height: 100px; object-fit: cover; margin: 16px; border-radius: 4px;" src="<%= booking.outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
+    <%= image_tag booking.outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "avatar-bordered mt-2" %>
+    <div class="card-body">
+      <h5 class="card-title"><strong><%= booking.outfit.name %></strong></h5>
+      <p class="card-text m-0"><strong>Price per day:</strong> ¥<%= booking.outfit.price %></p>
+      <p class="card-text m-0"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
+      <p class="card-text m-0"><strong>Start date:</strong> <%= booking.start_date %></p>
+      <p class="card-text m-0"><strong>End date:</strong> <%= booking.end_date %></p>
+      <p id="status"><strong><%= booking.status.capitalize %></strong></p>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong>Price per day:</strong> ¥<%= number_with_delimiter(booking.outfit.price) %></li>
-    <li class="list-group-item"><strong>Start date:</strong> <%= booking.start_date %></li>
-    <li class="list-group-item"><strong>End date:</strong> <%= booking.end_date %></li>
-    <li class="list-group-item"><strong>Status:</strong> <%= booking.status.capitalize %></li>
-  </ul>
 </div>

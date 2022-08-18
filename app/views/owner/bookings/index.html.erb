@@ -1,68 +1,76 @@
 <div class="container my-4">
-  <div class="d-flex justify-content-between align-items-center">
-    <h2>My listings</h2>
-    <%= link_to 'New listing', new_outfit_path, class: 'btn btn-primary'%>
-  </div>
-  <br>
-  <div class="cards">
-    <% if @outfits.empty? %>
-      <p>No listings yet...</p>
-    <% else %>
-      <% @outfits.each do |outfit| %>
-        <div class="card">
-          <%= image_tag outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "avatar-bordered mt-2" %>
-          <img class="card-img-top" src="<%= outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
-          <div class="card-body">
-            <h2 class="category"><strong><%= outfit.category %></strong></h2>
-            <h2 class="size"><strong><%= outfit.size.upcase %></strong></h2>
-            <h5 class="card-title"><strong><%= outfit.name %></strong></h5>
-            <p class="card-text"><%= outfit.description %></p>
-            <p class="card-text"><strong>Price per day:</strong> ¥<%= outfit.price %></p>
-          </div>
-          <% if @bookings.where(outfit: outfit).present? %>
-          <h5 style="margin-left: 16px;"><strong>Booking requests:</strong></h5>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>My listings</h2>
+        <%= link_to 'New listing', new_outfit_path, class: 'btn btn-primary'%>
+      </div>
+      <br>
+      <% if @outfits.empty? %>
+        <p>No listings yet...</p>
+      <% else %>
+        <% @outfits.each do |outfit| %>
+          <div class="card">
+            <p class="card-outfit-pricing" id="card-booking-price"><strong>¥<%= number_with_delimiter(outfit.price) %></strong><span>/day</span></p>
+            <div class="d-flex">
+              <img style="width: 100px; height: 100px; object-fit: cover; margin: 16px; border-radius: 4px;" src="<%= outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title"><strong><%= outfit.name %></strong></h5>
+                <p><%= truncate(outfit.description, length: 45, omission: '... ') %></p>
+                <div class="d-flex gap-2">
+                  <p class="booking-info-tag"><%= outfit.category %></p>
+                  <p class="booking-info-tag"><%= outfit.size.capitalize %></p>
+                </div>
+              </div>
+            </div>
+            <h5 style="margin-left: 16px;"><strong>Booking requests:</strong></h5>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item mx-4">
-                <div class="bookings">
-                  <% @bookings.where(outfit: outfit).each do |booking| %>
-                    <div class="booking">
-                      <div class='booking-left'>
-                        <%= image_tag booking.user.avatar, class: 'avatar' %>
-                        <div class="booking-info">
-                          <div class="booking-info-title">
-                            <%= booking.user.first_name.capitalize %>
-                          </div>
-                          <div class="booking-info-details">
-                            <%= booking.start_date %> - <%= booking.end_date %>
-                          </div>
-                          <div class="booking-info-details">
-                            <%= booking.comment %>
+              <% if @bookings.where(outfit: outfit).present? %>
+                <li class="list-group-item">
+                  <div class="bookings">
+                    <% @bookings.where(outfit: outfit).each do |booking| %>
+                      <div class="booking">
+                        <div class='booking-left'>
+                          <%= image_tag booking.user.avatar, class: 'avatar-large' %>
+                          <div class="booking-info">
+                            <div class="booking-info-title">
+                              <%= booking.user.first_name.capitalize %>
+                            </div>
+                            <div class="booking-info-details">
+                              <%= booking.start_date %> - <%= booking.end_date %>
+                            </div>
+                            <div class="booking-info-details">
+                              <%= booking.comment %>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="booking-actions">
-                        <% if booking.pending? %>
-                          <%= simple_form_for booking do |f| %>
-                            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                            <%= f.submit 'Accept', class: 'btn btn-info' %>
+                        <div class="booking-actions">
+                          <% if booking.pending? %>
+                            <%= simple_form_for booking do |f| %>
+                              <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+                              <%= f.submit 'Accept', class: 'btn btn-info' %>
+                            <% end %>
+                            <%= simple_form_for booking do |f| %>
+                              <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+                              <%= f.submit 'Reject', class: 'btn btn-light' %>
+                            <% end %>
+                          <% else %>
+                            <p class='booking-tag'><%= booking.status %></p>
                           <% end %>
-                          <%= simple_form_for booking do |f| %>
-                            <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                            <%= f.submit 'Reject', class: 'btn btn-light' %>
-                          <% end %>
-                        <% else %>
-                          <p class='booking-tag'><%= booking.status %></p>
-                        <% end %>
+                        </div>
                       </div>
-                    </div>
-                  <% end %>
-                </div>
-              </li>
-            </ul>             
-          <% end %>
-        </div>
+                    <% end %>
+                  </div>
+                </li>           
+              <% else %>
+                <p class="mt-3" style="margin-left: 16px">No booking requests yet...</p>
+              <% end %>
+            </ul> 
+          </div>
+          <br>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 
