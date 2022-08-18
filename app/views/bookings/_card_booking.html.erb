@@ -9,10 +9,9 @@
     <p class="card-text"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong>Price per day:</strong> ¥<%= booking.outfit.price %></li>
+    <li class="list-group-item"><strong>Price per day:</strong> ¥<%= number_with_delimiter(booking.outfit.price) %></li>
     <li class="list-group-item"><strong>Start date:</strong> <%= booking.start_date %></li>
     <li class="list-group-item"><strong>End date:</strong> <%= booking.end_date %></li>
     <li class="list-group-item"><strong>Status:</strong> <%= booking.status.capitalize %></li>
   </ul>
 </div>
-
