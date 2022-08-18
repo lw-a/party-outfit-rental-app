@@ -17,7 +17,7 @@ puts "created #{User.count} users"
 
 
 CATEGORIES = ['Casual', 'Formal', 'Costume', 'Bussiness', 'Club', 'Datenight']
-SIZES = ['xs', 's', 'm', 'l', 'xl']
+SIZES = ['extra small', 'small', 'medium', 'large', 'extra large']
 
 puts 'Removing the outfits...'
 Outfit.destroy_all
@@ -26,7 +26,7 @@ puts 'Creating new outfits...'
 Outfit.create!(
   name: 'Perfect suit to meet the boss',
   color: 'Blue',
-  size: 'm',
+  size: 'medium',
   price: 3000,
   description: 'Do you have an important meeting with your boss? Want to dress to impress? Rent this suit to stand out of the crowd and get that raise you deserve!',
   category: 'Bussiness',
@@ -38,7 +38,7 @@ Outfit.create!(
 Outfit.create!(
   name: 'Beautifull dress',
   color: 'Red',
-  size: 's',
+  size: 'small',
   price: 2000,
   description: 'Fantastic dress for any occasion, but bound to impress any date. Dress up or dress down.',
   category: 'Datenight',
@@ -50,7 +50,7 @@ Outfit.create!(
 Outfit.create!(
   name: 'Clown costume. Scary but fun!',
   color: 'Rainbow',
-  size: 'l',
+  size: 'large',
   price: 5000,
   description: 'Afraid of clowns? Not anymore! With this costume you will put a smile on all the faces.',
   category: 'Costume',
@@ -62,7 +62,7 @@ Outfit.create!(
 Outfit.create!(
   name: 'Outshine the bride!',
   color: 'White',
-  size: 's',
+  size: 'small',
   price: 4000,
   description: 'With this dress you will be sure to outshine the bride, and create all the drama.',
   category: 'Formal',
@@ -74,7 +74,7 @@ Outfit.create!(
 Outfit.create!(
   name: "Impress all your bro's at the club with this lit fit",
   color: 'gray',
-  size: 'm',
+  size: 'medium',
   price: 3000,
   description: "Vests are the future!",
   category: 'Club',
@@ -86,7 +86,7 @@ Outfit.create!(
 Outfit.create!(
   name: 'NaNaNaNaNaNa',
   color: 'Black',
-  size: 'l',
+  size: 'large',
   price: 8000,
   description: 'BATMAN! When would this not be a great outfit!!!!',
   category: 'Costume',
@@ -98,7 +98,7 @@ Outfit.create!(
 Outfit.create!(
   name: 'Power suit',
   color: 'Black',
-  size: 's',
+  size: 'small',
   price: 4000,
   description: "Power suit for the power woman. Meet all the KPI's with this outfit",
   category: 'Business',
@@ -110,7 +110,7 @@ Outfit.create!(
 Outfit.create!(
   name: 'Nice day fit for a man on the go',
   color: 'blue',
-  size: 'm',
+  size: 'extra small',
   price: 2000,
   description: 'Going for a walk in the park? This is the perfect outfit for you.',
   category: 'Casual',
