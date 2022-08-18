@@ -1,5 +1,9 @@
 <div class="container my-4">
-  <h2>My listings</h2>
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>My listings</h2>
+    <%= link_to 'New listing', new_outfit_path, class: 'btn btn-primary'%>
+  </div>
+  <br>
   <div class="cards">
     <% if @bookings.empty? %>
       <p>No listings yet...</p>
@@ -22,7 +26,7 @@
                   <% @bookings.where(outfit: outfit).each do |booking| %>
                     <div class="booking">
                       <div class='booking-left'>
-                        <%= image_tag booking.user.avatar, class: 'avatar-bordered' %>
+                        <%= image_tag booking.user.avatar, class: 'avatar' %>
                         <div class="booking-info">
                           <div class="booking-info-title">
                             <%= booking.user.first_name.capitalize %>
