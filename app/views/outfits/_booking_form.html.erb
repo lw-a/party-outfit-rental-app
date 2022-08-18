@@ -1,8 +1,11 @@
 <h2><strong>Book this outfit!</strong></h2>
-<%= simple_form_for [outfit, booking] do |f| %>
-  <%= f.input :start_date, as: :date, html5: true %>
-  <%= f.input :end_date, as: :date, html5: true %>
-  <%= f.input :comment %>
-  <%# <p>Price <%= :end_date.value - :start_date.value %>
-  <%= f.submit 'Request booking', class: 'btn btn-primary form-control' %>
-<% end %>
+<div data-controller="booking-form">
+  <%= simple_form_for [outfit, booking] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true, input_html: { data: {'booking-form-target': "startDate", action: "change->booking-form#calculatePrice"} }%>
+    <%= f.input :end_date, as: :date, html5: true, input_html: { data: {'booking-form-target': "endDate", action: "change->booking-form#calculatePrice"} }%>
+    <p><strong>Total price: <span data-booking-form-target="totalPrice"></span></strong></p>
+    <%= f.input :comment %>
+    <%= hidden_field_tag :price, outfit.price, data: {'booking-form-target': 'price'} %>
+    <%= f.submit 'Request booking', class: 'btn btn-primary form-control' %>
+  <% end %>
+</div>
