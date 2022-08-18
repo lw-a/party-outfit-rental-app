@@ -1,14 +1,14 @@
 <div class="card-outfit">
   <img src=<%= outfit.image_url ? outfit.image_url :  '/assets/hero.jpg'%>>
   <h2 class="category"><%= outfit.category %></h2>
-  <h2 class="size"> <%= outfit.size.upcase %></h2>
+  <h2 class="size"> <%= outfit.size.first.upcase %></h2>
   <div class="card-outfit-infos">
     <div>
       <h2><%= outfit.name.capitalize %></h2>
       <p><%= truncate(outfit.description, length: 45, omission: '... ') %></p>
     </div>
-    <h2 class="card-outfit-pricing">¥<%= outfit.price %></h2>
     <%= image_tag outfit.user.avatar, class: "card-outfit-user avatar-bordered" %>
   </div>
-  <%= link_to '', outfit_path(outfit), class: 'card-link' %> 
+  <%= link_to '', outfit_path(outfit), class: 'card-link' %>
+  <p class="card-outfit-pricing"><strong>¥<%= outfit.price %></strong>/day </p>
 </div>
