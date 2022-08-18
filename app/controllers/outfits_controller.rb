@@ -9,7 +9,7 @@ class OutfitsController < ApplicationController
       {
         lat: outfit.latitude,
         lng: outfit.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {outfit: outfit})
+        info_window: render_to_string(partial: "info_window", locals: { outfit: })
 
       }
     end
@@ -19,6 +19,12 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.find(params[:id])
     @booking = Booking.new
     authorize @outfit
+
+    @markers = [{
+      lat: @outfit.geocode[0],
+      lng: @outfit.geocode[1],
+      info_window: render_to_string(partial: "info_window", locals: { outfit: @outfit })
+    }]
   end
 
   def new
