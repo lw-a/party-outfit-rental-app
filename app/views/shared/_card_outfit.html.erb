@@ -11,5 +11,5 @@
     <%= image_tag outfit.user.avatar, class: "card-outfit-user avatar-bordered" %>
   </div>
   <%= link_to '', outfit_path(outfit), class: 'card-link' %>
-  <h2 class="card-outfit-pricing">¥<%= outfit.price %><span>/day</span></h2>
+  <h2 class="card-outfit-pricing">¥<%= number_with_delimiter(outfit.price) %><span>/day</span></h2>
 </div>
