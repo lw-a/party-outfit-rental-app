@@ -1,13 +1,16 @@
 <div class="container my-4">
-  <h2>My bookings</h2>
   <br>
-  <div class="cards">
-    <% if @bookings.empty? %>
-      <p>No bookings yet...</p>
-    <% else %>
-      <% @bookings.each do |booking| %>
-        <%= render 'card_booking', booking: booking %>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <h2>My bookings</h2>
+      <br>
+      <% if @bookings.empty? %>
+        <p>No bookings yet...</p>
+      <% else %>
+        <% @bookings.each do |booking| %>
+          <%= render 'card_booking', booking: booking %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
