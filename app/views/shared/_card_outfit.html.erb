@@ -1,5 +1,9 @@
 <div class="card-outfit">
-  <img src=<%= outfit.image_url ? outfit.image_url :  '/assets/hero.jpg'%>>
+  <% if outfit.photo.attached? %>
+    <%= cl_image_tag outfit.photo.key %>
+  <% else %>
+    <%= image_tag outfit.image_url %>
+  <% end %>
   <h2 class="category"><%= outfit.category %></h2>
   <h2 class="size"> <%= outfit.size.upcase %></h2>
   <div class="card-outfit-infos">
@@ -10,5 +14,5 @@
     <h2 class="card-outfit-pricing">¥<%= outfit.price %></h2>
     <%= image_tag outfit.user.avatar, class: "card-outfit-user avatar-bordered" %>
   </div>
-  <%= link_to '', outfit_path(outfit), class: 'card-link' %> 
+  <%= link_to '', outfit_path(outfit), class: 'card-link' %>
 </div>

@@ -1,12 +1,18 @@
-<%= simple_form_for(@outfit) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :size %>
-  <%= f.input :color %>
-  <%= f.input :description %>
-  <%= f.input :category %>
-  <%= f.input :price %>
-  <%= f.input :location %>
-  <%= f.input :photo, as: :file %>
-<% end %>
+<div class="container row justify-content-center mw-100 mt-5">
+  <div class="col-lg-3 col-sm-6">
 
-<button type="button" class="mt-2 btn btn-dark"><%= link_to "←", outfits_path %></button>
+    <%= simple_form_for(@outfit) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :size, as: :radio_buttons, collection: ['xs', 's', 'm', 'l', 'xl'], wrapper: :vertical_collection_inline%>
+      <%= f.input :color %>
+      <%= f.input :description %>
+      <%= f.input :category, as: :select, collection: ['Casual', 'Formal', 'Costume', 'Bussiness', 'Club', 'Datenight'] %>
+      <%= f.input :price, input_html: { min: 0 }, placeholder: '¥'%>
+      <%= f.input :address %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+    <% end %>
+    <button type="button" class="mt-2 btn btn-dark"><%= link_to "←", outfits_path %></button>
+
+  </div>
+</div>

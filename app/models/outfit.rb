@@ -6,4 +6,8 @@ class Outfit < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  def image_url
+
+    super || "hero.jpg"
+  end
 end
