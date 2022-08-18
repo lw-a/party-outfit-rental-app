@@ -5,7 +5,17 @@
     <%= image_tag outfit.image_url %>
   <% end %>
   <h2 class="category"><%= outfit.category %></h2>
-  <h2 class="size"> <%= outfit.size.first.upcase %></h2>
+  <h2 class="size">
+    <% size = outfit.size.split
+    shortened = []
+    size.each do |word|
+      if word == "extra"
+        shortened << "X"
+      else
+        shortened << word.first.upcase
+      end
+    end %>
+    <%= shortened.join %></h2>
   <div class="card-outfit-infos">
     <div>
       <h2><%= outfit.name.capitalize %></h2>
