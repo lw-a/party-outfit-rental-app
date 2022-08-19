@@ -9,6 +9,7 @@
       <% else %>
         <% @bookings.each do |booking| %>
           <%= render 'card_booking', booking: booking %>
+          <br>
         <% end %>
       <% end %>
     </div>
