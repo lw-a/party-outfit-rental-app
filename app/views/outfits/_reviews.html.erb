@@ -1,0 +1,31 @@
+<br>
+<h3>Reviews</h3>
+<div class="cards mt-3">
+  <% if @outfit.reviews.any? %>
+    <% @outfit.reviews.each do |review| %>
+      <div class="card-review">
+        <div class="card-review-infos">
+          <div class="d-flex">
+            <% review.rating.times do %>
+              <span class="star-review-display-select"><i class="fas fa-star"></i></span>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <span class="star-review-display-not"><i class="fas fa-star"></i></span>
+            <% end %>
+          </div>
+          <% if review.comment.present? %>
+            <p><%= review.comment %></p>
+          <% else %>
+            <p>No comment added...</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No reviews yet...</p>
+  <% end %>
+</div>
+<br>
+<h4>Add a review</h4>
+<%= render 'review_form', outfit: @outfit, review: @review%>
+<br>
