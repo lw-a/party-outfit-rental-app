@@ -2,8 +2,10 @@
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <% @outfit.photos.slice(1..).each_with_index do |photo, index| %>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to=<%=index+1%> aria-label=<%="Slide-#{index+1}"%>></button>
+      <% if @outfit.photos.attached? %>
+        <% @outfit.photos.slice(1..).each_with_index do |photo, index| %>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to=<%=index+1%> aria-label=<%="Slide-#{index+1}"%>></button>
+        <% end %>
       <% end %>
     </div>
     <% if @outfit.photos.attached? %>
