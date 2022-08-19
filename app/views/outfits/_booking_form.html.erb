@@ -1,8 +1,9 @@
 <h2><strong>Book this outfit!</strong></h2>
 <div data-controller="booking-form">
-  <%= simple_form_for [outfit, booking] do |f| %>
+  <%= simple_form_for [outfit, booking], html: {novalidate: true, class: "no-bs-validation"} do |f| %>
     <%= f.input :start_date, as: :date, html5: true, input_html: { data: {'booking-form-target': "startDate", action: "change->booking-form#calculatePrice"} }%>
     <%= f.input :end_date, as: :date, html5: true, input_html: { data: {'booking-form-target': "endDate", action: "change->booking-form#calculatePrice"} }%>
+    <%= f.input :delivery_type, collection: ["Pickup In Person", "Delivery (+¥500)"], selected: 1, html5: true, input_html: { data: {'booking-form-target': "deliveryType", action: "change->booking-form#calculatePrice"} } %>
     <p><strong>Total price: <span data-booking-form-target="totalPrice"></span></strong></p>
     <%= f.input :comment %>
     <%= hidden_field_tag :price, outfit.price, data: {'booking-form-target': 'price'} %>

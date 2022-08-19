@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :outfit
   belongs_to :user
-  validates :start_date, presence: true
+  validates :start_date, :delivery_type, presence: true
   validates :end_date, presence: true, comparison: { greater_than: :start_date }
   validate :not_past_start_date
   validate :not_past_end_date

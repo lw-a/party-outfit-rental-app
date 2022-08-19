@@ -1,5 +1,10 @@
 <div class="card">
   <div class="d-flex">
+
+    <p class="card-outfit-pricing" id="card-booking-price"><strong>¥<%= number_with_delimiter(booking.outfit.price) %></strong><span>/day</span>
+      <br>
+      <span>Total:</span> <strong>¥<%= ((booking.end_date - booking.start_date).to_i * booking.outfit.price) + (booking.delivery_type === "Pickup In Person" ? 0 : 500) %></strong>
+    </p>
     <% if outfit.photos.attached? %>
       <%= cl_image_tag outfit.photos[0].key, class: "card-image" %>
     <% else %>
@@ -10,8 +15,9 @@
     <div class="card-body">
       <%= link_to '', outfit_path(booking.outfit), class: 'card-link' %>
       <h5 class="card-title"><strong><%= booking.outfit.name %></strong></h5>
-            <p class="card-text m-0"><%= booking.start_date.strftime('%b %d %Y') %> - <%= booking.end_date.strftime('%b %d %Y') %></p>
-      <p class="card-text mt-2"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
+      <p class="card-text m-0"><%= booking.start_date.strftime('%b %d %Y') %> - <%= booking.end_date.strftime('%b %d %Y') %></p>
+      <p style="margin-top: 8px;"><strong>Shipping:</strong> <%= booking.delivery_type %></p>
+      <p class="card-text mt-2" style="width: 90%;"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
       <p id="status"><%= booking.status %></p>
     </div>
   </div>
