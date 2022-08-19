@@ -13,7 +13,11 @@
     <%= shortened.join %>
   </h2>
   <%= link_to '', outfit_path(outfit), class: 'card-link' %>
-  <%= image_tag outfit.image_url, alt: "outfit image" %>
+  <% if outfit.photos.attached? %>
+    <%= cl_image_tag outfit.photos[0].key %>
+  <% else %>
+    <%= image_tag outfit.image_url %>
+  <% end %>
   <div>
     <h2><%= outfit.name %></h2>
   </div>
