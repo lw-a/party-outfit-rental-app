@@ -9,7 +9,7 @@
       <h5 class="card-title"><strong><%= booking.outfit.name %></strong></h5>
       <p class="card-text m-0"><%= booking.start_date.strftime('%b %d %Y') %> - <%= booking.end_date.strftime('%b %d %Y') %></p>
       <p style="margin-top: 8px;"><strong>Shipping:</strong> <%= booking.delivery_type %></p>
-      <p class="card-text mt-2"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
+      <p class="card-text mt-2" style="width: 90%;"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
       <p id="status"><%= booking.status %></p>
     </div>
   </div>
