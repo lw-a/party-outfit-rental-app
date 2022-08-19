@@ -36,7 +36,7 @@ Outfit.create!(
 )
 
 Outfit.create!(
-  name: 'Beautifull dress',
+  name: 'Beautiful dress',
   color: 'Red',
   size: 'small',
   price: 2000,
