@@ -228,3 +228,23 @@ Outfit.create!(
 )
 
 puts "...created #{Outfit.count} outfits"
+
+
+puts 'Adding reviews...'
+
+SUBJECTS = ['owner', 'outfit', 'fit', 'service', 'look']
+
+Outfit.all.each do |outfit|
+  rand(1..3).times do
+    review = Review.new(rating: rand(3..5), comment: Faker::Adjective.positive.capitalize + ' ' + SUBJECTS.sample)
+    review.outfit = outfit
+    review.save!
+  end
+  rand(0..1).times do
+    review = Review.new(rating: rand(1..2), comment: Faker::Adjective.negative.capitalize + ' ' + SUBJECTS.sample)
+    review.outfit = outfit
+    review.save!
+  end
+end
+
+puts "...created #{Review.count} reviews"
