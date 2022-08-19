@@ -23,6 +23,7 @@ class OutfitsController < ApplicationController
   def show
     @outfit = Outfit.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
     authorize @outfit
 
     @markers = [{

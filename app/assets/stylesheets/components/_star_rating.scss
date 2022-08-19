@@ -1,0 +1,43 @@
+.star-rating {
+  display: flex;
+  margin-bottom: 30px;
+  
+  input {
+    visibility: hidden;
+    margin-right: 1em;
+    font-size: 16px;
+    text-shadow: 0px 0px 1px #000000;
+  }
+
+  input:before {
+    cursor: pointer;
+    visibility: visible;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f005';
+    font-weight: 900;
+    color: $yellow;
+    transition: color 0.35s;
+  }
+
+  input:hover {
+    transform: scale(1.2) translate(-10%, -10%);
+  }
+
+  input:checked ~ input:before {
+    color: #fff;
+  }
+}
+
+.star-review-display-select {
+  color: $yellow;
+  font-size: 16px;
+  text-shadow: 0px 0px 1px #000000;
+  padding-left: 4px;
+}
+
+.star-review-display-not {
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 0px 0px 1px #000000;
+  padding-left: 4px;
+}
