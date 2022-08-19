@@ -2,12 +2,10 @@ class OutfitsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
+    @outfits = policy_scope(Outfit)
     if params[:q].present?
       ## WITH PGSEARCH
-      @outfits = policy_scope(Outfit)
       @outfits = Outfit.search_(params[:q])
-    else
-      @outfits = policy_scope(Outfit)
     end
 
     # The `geocoded` scope filters only outfits with coordinates

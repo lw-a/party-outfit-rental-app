@@ -8,8 +8,7 @@
         <p>No bookings yet...</p>
       <% else %>
         <% @bookings.each do |booking| %>
-          <%= render 'card_booking', booking: booking %>
-          <br>
+          <%= render 'card_booking', booking: booking, outfit: booking.outfit %>
         <% end %>
       <% end %>
     </div>
