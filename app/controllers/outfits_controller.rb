@@ -41,7 +41,7 @@ class OutfitsController < ApplicationController
     @outfit.user = current_user
     authorize @outfit
     if @outfit.save
-      redirect_to outfits_path
+      redirect_to owner_bookings_path
     else
       render :new, status: :unprocessable_entity
     end
