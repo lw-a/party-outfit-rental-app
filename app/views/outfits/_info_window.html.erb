@@ -1,3 +1,21 @@
-<h3><%= link_to outfit.name, outfit_path(outfit) %></h3>
-<p><%= outfit.address %></p>
-<%= image_tag outfit.image_url, alt: "outfit image"%>
+<div class="position-relative justify-content-between mx-1">
+  <h2 class="category"><%= outfit.category %></h2>
+  <h2 class="size">
+    <% size = outfit.size.split
+    shortened = []
+    size.each do |word|
+      if word == "extra"
+        shortened << "X"
+      else
+        shortened << word.first.upcase
+      end
+    end %>
+    <%= shortened.join %>
+  </h2>
+  <%= link_to '', outfit_path(outfit), class: 'card-link' %>
+  <%= image_tag outfit.image_url, alt: "outfit image" %>
+  <div>
+    <h2><%= outfit.name %></h2>
+  </div>
+  <h2 class="card-outfit-pricing">¥<%= number_with_delimiter(outfit.price) %><span>/day</span></h2>
+</div>
