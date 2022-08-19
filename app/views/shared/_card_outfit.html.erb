@@ -5,14 +5,25 @@
     <%= image_tag outfit.image_url %>
   <% end %>
   <h2 class="category"><%= outfit.category %></h2>
-  <h2 class="size"> <%= outfit.size.upcase %></h2>
+  <h2 class="size">
+    <% size = outfit.size.split
+    shortened = []
+    size.each do |word|
+      if word == "extra"
+        shortened << "X"
+      else
+        shortened << word.first.upcase
+      end
+    end %>
+    <%= shortened.join %></h2>
   <div class="card-outfit-infos">
     <div>
       <h2><%= outfit.name.capitalize %></h2>
       <p><%= truncate(outfit.description, length: 45, omission: '... ') %></p>
+      <br>
     </div>
-    <h2 class="card-outfit-pricing">¥<%= outfit.price %></h2>
     <%= image_tag outfit.user.avatar, class: "card-outfit-user avatar-bordered" %>
   </div>
   <%= link_to '', outfit_path(outfit), class: 'card-link' %>
+  <h2 class="card-outfit-pricing">¥<%= number_with_delimiter(outfit.price) %><span>/day</span></h2>
 </div>

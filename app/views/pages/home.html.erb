@@ -1,8 +1,9 @@
 <%= render "banner" %>
 <div class="container my-4">
   <h2>Recently booked outfits</h2>
-<div class="cards">
-  <% @outfits.each do |outfit| %>
-    <%= render 'shared/card_outfit',outfit: outfit %>
-  <% end %>
+  <div class="cards">
+    <% @outfits.each do |outfit| %>
+      <%= render 'shared/card_outfit',outfit: outfit %>
+    <% end %>
+  </div>
 </div>

@@ -5,8 +5,23 @@
   #avatar-booking {
     position: absolute;
     right: 16px;
-    top: 264px;
+    top: 8px;
     width: 60px;
+  }
+
+  #card-booking-price {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+
+  #status {
+    position: absolute;
+    right: 16px;
+    bottom: 8px;
+    padding: 4px 16px;
+    background-color: rgb(209, 209, 209);
+    border-radius: 16px;
   }
 }
 
@@ -80,6 +95,16 @@
   width: 40px;
 }
 
+.card-outfit .card-outfit-pricing {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.card-outfit-pricing span {
+  color: #727272;
+}
+
 .card-body .category {
   font-size: 16px;
   position: absolute;
@@ -103,6 +128,12 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.index-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 
@@ -147,5 +178,42 @@
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// INDEX
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .index-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .index-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .index-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .index-cards {
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .index-cards {
+    grid-template-columns: 1fr 1fr;
   }
 }
