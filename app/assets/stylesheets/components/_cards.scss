@@ -25,6 +25,14 @@
   }
 }
 
+.card-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 16px;
+  border-radius: 4px;
+}
+
 .card-outfit {
   position: relative;
   overflow: hidden;

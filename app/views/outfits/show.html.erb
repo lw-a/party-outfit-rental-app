@@ -5,75 +5,75 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
-          <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
-        </div>
-        <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+    <% if @outfit.photos.attached? %>
+      <% @outfit.photos.each do |photo| %>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
+              <%= cl_image_tag photo.key, alt: "outfit image", id: 'show-image-top' %>
+            </div>
+            <%= cl_image_tag photo.key, alt: "outfit image", id: 'show-image-top' %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
+              <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+            </div>
+            <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+          </div>
+        <% end %>
       </div>
-      <div class="carousel-item">
-        <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
-          <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
-        </div>
-        <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
-      </div>
-      <div class="carousel-item">
-        <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
-          <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
-        </div>
-        <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <div class="row my-3 gy-3">
-    <div class="col-12 col-md-8">
-      <h2 class="mb-3"><%= @outfit.name.capitalize %></h2>
-      <div class="d-flex align-items-center gap-2">
-        <p><%= image_tag @outfit.user.avatar, alt: 'avatar', class: "avatar-bordered" %></p>
-        <p><strong><%= @outfit.user.first_name.capitalize %></strong></p>
-      </div>
-      <p class="mt-2"><%= @outfit.description %></p>
-      <table class="table w-50">
-        <tbody>
-          <tr>
-            <td><strong>Category</strong></td>
-            <td><%= @outfit.category %></td>
-          </tr>
-          <tr>
-            <td><strong>Size</strong></td>
-            <td><%= @outfit.size.titleize %></td>
-          </tr>
-          <tr>
-            <td><strong>Price per day</strong></td>
-            <td>¥<%= number_with_delimiter(@outfit.price) %></td>
-          </tr>
-          <tr>
-            <td rowspan="2"><strong>Shipping</strong></td>
-            <td><i class="fa-solid fa-truck-fast"></i><br>
-              Express Shipping</td>
-            <td><i class="fa-solid fa-handshake-simple"></i><br>
-              Pickup in person</td>
-          </tr>
-        </tbody>
-      </table>
-      <div>
-        <div style="width: 100%; height: 500px; border-radius: 4px; box-shadow: 0 0 15px rgba(0,0,0,0.2);"
+    <div class="row my-3 gy-3">
+      <div class="col-12 col-md-8">
+        <h2 class="mb-3"><%= @outfit.name.capitalize %></h2>
+        <div class="d-flex align-items-center gap-2">
+          <p><%= image_tag @outfit.user.avatar, alt: 'avatar', class: "avatar-bordered" %></p>
+          <p><strong><%= @outfit.user.first_name.capitalize %></strong></p>
+        </div>
+        <p class="mt-2"><%= @outfit.description %></p>
+        <table class="table w-50">
+          <tbody>
+            <tr>
+              <td><strong>Category</strong></td>
+              <td><%= @outfit.category %></td>
+            </tr>
+            <tr>
+              <td><strong>Size</strong></td>
+              <td><%= @outfit.size.titleize %></td>
+            </tr>
+            <tr>
+              <td><strong>Price per day</strong></td>
+              <td>¥<%= number_with_delimiter(@outfit.price) %></td>
+            </tr>
+            <tr>
+              <td rowspan="2"><strong>Shipping</strong></td>
+              <td><i class="fa-solid fa-truck-fast"></i><br>
+                Express Shipping</td>
+              <td><i class="fa-solid fa-handshake-simple"></i><br>
+                Pickup in person</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <div style="width: 100%; height: 500px; border-radius: 4px; box-shadow: 0 0 15px rgba(0,0,0,0.2);"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 form-booking" style="align-self: start;">
+        <%= render 'booking_form', outfit: @outfit, booking: @booking %>
       </div>
     </div>
-    <div class="col-12 col-md-4 form-booking" style="align-self: start;">
-      <%= render 'booking_form', outfit: @outfit, booking: @booking %>
-    </div>
   </div>
-</div>

@@ -1,6 +1,10 @@
 <div class="card">
   <div class="d-flex">
-    <img style="width: 100px; height: 100px; object-fit: cover; margin: 16px; border-radius: 4px;" src="<%= booking.outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
+    <% if outfit.photos.attached? %>
+      <%= cl_image_tag outfit.photos[0].key, class: "card-image" %>
+    <% else %>
+      <%= image_tag outfit.image_url, class: "card-image" %>
+    <% end %>
     <%= image_tag booking.outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "avatar-bordered mt-2" %>
     <div class="card-body">
       <h5 class="card-title"><strong><%= booking.outfit.name %></strong></h5>
