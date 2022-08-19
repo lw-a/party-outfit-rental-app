@@ -1,6 +1,6 @@
 <div class="card-outfit">
-  <% if outfit.photo.attached? %>
-    <%= cl_image_tag outfit.photo.key %>
+  <% if outfit.photos.attached? %>
+    <%= cl_image_tag outfit.photos[0].key %>
   <% else %>
     <%= image_tag outfit.image_url %>
   <% end %>

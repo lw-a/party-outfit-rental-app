@@ -8,7 +8,7 @@
       <%= f.input :category, as: :select, collection: ['Casual', 'Formal', 'Costume', 'Bussiness', 'Club', 'Datenight'] %>
       <%= f.input :price, input_html: { min: 0 }, placeholder: '¥'%>
       <%= f.input :address %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit 'Add listing', class: 'btn btn-primary' %>
     <% end %>
   </div>
