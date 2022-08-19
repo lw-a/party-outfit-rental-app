@@ -6,6 +6,8 @@ class Booking < ApplicationRecord
   validate :not_past_start_date
   validate :not_past_end_date
   enum status: { pending: 0, accepted: 1, rejected: 2, completed: 3 }
+  enum delivery_type: { pick_up: 0, delivery: 1 }
+
 
   def not_past_start_date
     if start_date < Date.today
