@@ -1,3 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show_outfits";
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 50px;
+}
+
