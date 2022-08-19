@@ -1,0 +1,35 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
+        <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+      </div>
+      <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+    </div>
+    <div class="carousel-item">
+      <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
+        <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+      </div>
+      <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+    </div>
+    <div class="carousel-item">
+      <div id="show-image" style="background-image: linear-gradient(0deg, rgba(240, 240, 240, 0.4), rgba(240, 240, 240, 0.4)), url(<%= @outfit.image_url %>);">
+        <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+      </div>
+      <%= image_tag @outfit.image_url, alt: "outfit image", id: 'show-image-top' %>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

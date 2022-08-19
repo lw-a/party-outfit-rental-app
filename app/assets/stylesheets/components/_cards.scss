@@ -25,6 +25,35 @@
   }
 }
 
+.card-review {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  color: $gray;
+  padding-left: 8px;
+}
+
+.card-review h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-review p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+.card-review .card-review-infos {
+  padding: 16px;
+}
+
 .card-outfit {
   position: relative;
   overflow: hidden;
