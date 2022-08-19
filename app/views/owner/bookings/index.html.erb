@@ -11,6 +11,7 @@
       <% else %>
         <% @outfits.each do |outfit| %>
           <div class="card">
+            <%= link_to '', outfit_path(outfit), class: 'card-link' %>
             <p class="card-outfit-pricing" id="card-booking-price"><strong>¥<%= number_with_delimiter(outfit.price) %></strong><span>/day</span></p>
             <div class="d-flex">
               <img style="width: 100px; height: 100px; object-fit: cover; margin: 16px; border-radius: 4px;" src="<%= outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
@@ -37,11 +38,14 @@
                               <%= booking.user.first_name.capitalize %>
                             </div>
                             <div class="booking-info-details">
-                              <%= booking.start_date %> - <%= booking.end_date %>
+                              <%= booking.start_date.strftime('%b %d %Y') %> - <%= booking.end_date.strftime('%b %d %Y') %>
                             </div>
-                            <div class="booking-info-details">
-                              <%= booking.comment %>
-                            </div>
+                            <% if booking.comment.present? %>
+                              <div class="booking-info-details mt-3">
+                                <p class="m-0"><strong>Comment:</strong></p>
+                                <p class="m-0"><%= booking.comment %></p>
+                              </div>
+                            <% end %>
                           </div>
                         </div>
                         <div class="booking-actions">

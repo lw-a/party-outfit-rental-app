@@ -1,14 +1,13 @@
 <div class="card">
   <div class="d-flex">
+    <p class="card-outfit-pricing" id="card-booking-price"><strong>¥<%= number_with_delimiter(booking.outfit.price) %></strong><span>/day</span></p>
     <img style="width: 100px; height: 100px; object-fit: cover; margin: 16px; border-radius: 4px;" src="<%= booking.outfit.image_url %>" alt="Card image cap" style="height: 300px; object-fit: cover;">
-    <%= image_tag booking.outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "avatar-bordered mt-2" %>
     <div class="card-body">
+      <%= link_to '', outfit_path(booking.outfit), class: 'card-link' %>
       <h5 class="card-title"><strong><%= booking.outfit.name %></strong></h5>
-      <p class="card-text m-0"><strong>Price per day:</strong> ¥<%= booking.outfit.price %></p>
-      <p class="card-text m-0"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
-      <p class="card-text m-0"><strong>Start date:</strong> <%= booking.start_date %></p>
-      <p class="card-text m-0"><strong>End date:</strong> <%= booking.end_date %></p>
-      <p id="status"><strong><%= booking.status.capitalize %></strong></p>
+            <p class="card-text m-0"><%= booking.start_date.strftime('%b %d %Y') %> - <%= booking.end_date.strftime('%b %d %Y') %></p>
+      <p class="card-text mt-2"><strong>Comment:</strong> <%= booking.comment.capitalize %></p>
+      <p id="status"><%= booking.status %></p>
     </div>
   </div>
 </div>
