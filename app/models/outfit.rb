@@ -2,7 +2,7 @@ class Outfit < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
   has_many :bookings, dependent: :destroy
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   validates :color, :size, :address, :category, :name, :description, :price, presence: true
 
   geocoded_by :address
