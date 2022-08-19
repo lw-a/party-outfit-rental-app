@@ -29,6 +29,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :comment, :status)
+    params.require(:booking).permit(:start_date, :end_date, :comment, :status, :delivery_type)
   end
 end
