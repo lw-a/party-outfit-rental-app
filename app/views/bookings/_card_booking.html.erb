@@ -10,7 +10,6 @@
     <% else %>
       <%= image_tag outfit.image_url, class: "card-image" %>
     <% end %>
-    <%= image_tag booking.outfit.user.avatar, alt: 'avatar', id: "avatar-booking", class: "avatar-bordered mt-2" %>
     <p class="card-outfit-pricing" id="card-booking-price"><strong>¥<%= number_with_delimiter(booking.outfit.price) %></strong><span>/day</span></p>
     <div class="card-body">
       <%= link_to '', outfit_path(booking.outfit), class: 'card-link' %>
