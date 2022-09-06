@@ -1,6 +1,6 @@
-# 📚 Oshare
+# 👗 Oshare
 
-Project description goes here
+An outfit rental app for special events.
 
 _DROP SCREENSHOT HERE_
 <br>
