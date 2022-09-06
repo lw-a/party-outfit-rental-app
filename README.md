@@ -1,6 +1,6 @@
 # 👗 Oshare
 
-An outfit rental app for special events.
+Online marketplace for booking outfits for special events.
 
 _DROP SCREENSHOT HERE_
 <br>
